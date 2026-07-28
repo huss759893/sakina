@@ -1,4 +1,5 @@
 import { requestJSON, USER_AGENT } from './client';
+import { canonicalSurahName } from '@/data/surahNames';
 
 /**
  * Qur'an text and audio from api.alquran.cloud — the Uthmani script is public
@@ -58,7 +59,10 @@ export async function fetchSurahList(
   });
   const data = unwrap(json);
   if (!Array.isArray(data)) throw new Error('Unexpected surah list shape');
-  return data;
+  return data.map((s) => ({
+    ...s,
+    englishName: canonicalSurahName(s.number, s.englishName),
+  }));
 }
 
 export interface SurahContent {
@@ -113,7 +117,10 @@ export async function fetchSurah(
     surah: {
       number: arabicEdition.number,
       name: arabicEdition.name,
-      englishName: arabicEdition.englishName,
+      englishName: canonicalSurahName(
+        arabicEdition.number,
+        arabicEdition.englishName
+      ),
       englishNameTranslation: arabicEdition.englishNameTranslation,
       numberOfAyahs: arabicEdition.numberOfAyahs,
       revelationType: arabicEdition.revelationType,

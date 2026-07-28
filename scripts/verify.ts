@@ -34,6 +34,11 @@ import {
   stripBasmala,
   formatCurrency,
 } from '@/utils/format';
+import {
+  SURAH_NAMES,
+  canonicalSurahName,
+  foldTransliteration,
+} from '@/data/surahNames';
 
 let pass = 0;
 let fail = 0;
@@ -226,6 +231,22 @@ check('surah 1 keeps basmala (it is ayah 1)', stripBasmala(BASMALA, 1), BASMALA)
 check('surah 9 untouched (has none)', stripBasmala('بَرَآءَةٌ', 9), 'بَرَآءَةٌ');
 check('non-basmala opening untouched', stripBasmala('الٓمٓ', 2), 'الٓمٓ');
 check('basmala-only ayah not blanked', stripBasmala(BASMALA_MUSHAF, 2), BASMALA_MUSHAF);
+
+console.log('\n── Surah names ───────────────────────────────────────────');
+check('all 114 surahs named', Object.keys(SURAH_NAMES).length, 114);
+check(
+  'every number 1-114 present',
+  Array.from({ length: 114 }, (_, i) => SURAH_NAMES[i + 1]).every(
+    (n) => typeof n === 'string' && n.length > 0
+  ),
+  true
+);
+check('surah 30 is Ar-Rūm, not Ar-Room', SURAH_NAMES[30], 'Ar-Rūm');
+check('canonical name overrides API spelling', canonicalSurahName(30, 'Ar-Room'), 'Ar-Rūm');
+check('unknown number falls back to API name', canonicalSurahName(999, 'Whatever'), 'Whatever');
+check('fold matches plain typing', foldTransliteration('Ar-Rūm'), 'arrum');
+check('fold handles ayn + macrons', foldTransliteration('Āl ʿImrān'), 'al imran');
+check('fold strips hamza', foldTransliteration('An-Nisāʾ'), 'annisa');
 
 console.log('\n── Zakat ─────────────────────────────────────────────────');
 // Silver nisab: 612.36g × $0.90 = $551.12. Net $10,000 → due $250.

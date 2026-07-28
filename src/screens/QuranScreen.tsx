@@ -19,6 +19,7 @@ import { Screen, useTabBarClearance } from '@/components/Screen';
 import { useQuranStore } from '@/store/useQuranStore';
 import type { SurahSummary } from '@/api/alquran';
 import { padNumber } from '@/utils/format';
+import { foldTransliteration } from '@/data/surahNames';
 import { palette, space, radius, font, HIT_SLOP, MIN_TOUCH } from '@/theme';
 import type { RootStackParamList } from '@/navigation/types';
 
@@ -39,10 +40,11 @@ export function QuranScreen() {
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
     if (!q) return surahs;
+    const folded = foldTransliteration(q);
 
     return surahs.filter(
       (s) =>
-        s.englishName.toLowerCase().includes(q) ||
+        foldTransliteration(s.englishName).includes(folded) ||
         s.englishNameTranslation.toLowerCase().includes(q) ||
         s.name.includes(query.trim()) ||
         String(s.number) === q

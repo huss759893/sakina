@@ -16,7 +16,8 @@ import { SettingsScreen } from '@/screens/SettingsScreen';
 import { LocationSearchScreen } from '@/screens/LocationSearchScreen';
 
 import { palette, fontFamilies } from '@/theme';
-import type { RootStackParamList } from './types';
+import { readJSON } from '@/utils/storage';
+import type { RootStackParamList, TabParamList } from './types';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -68,9 +69,49 @@ const linking: LinkingOptions<RootStackParamList> = {
   },
 };
 
+/**
+ * UI-automation hook: when the `screenshot-route` storage key is present the
+ * navigator opens directly on that screen. Nothing inside the app ever writes
+ * the key — it exists so test harnesses can drive the sandbox from outside.
+ */
+interface ScreenshotRoute {
+  tab?: keyof TabParamList;
+  stack?: Exclude<keyof RootStackParamList, 'Tabs' | 'Surah'>;
+  params?: RootStackParamList['Surah'];
+}
+
+function buildInitialState(target: ScreenshotRoute | null) {
+  if (target?.tab) {
+    return { routes: [{ name: 'Tabs' as const, state: { routes: [{ name: target.tab }] } }] };
+  }
+  if (target?.stack || target?.params) {
+    const name = target.params ? ('Surah' as const) : target.stack!;
+    return {
+      index: 1,
+      routes: [{ name: 'Tabs' as const }, { name, params: target.params }],
+    };
+  }
+  return undefined;
+}
+
 export function RootNavigator() {
+  const [routeOverride, setRouteOverride] = React.useState<
+    ScreenshotRoute | null | 'pending'
+  >('pending');
+
+  React.useEffect(() => {
+    void readJSON<ScreenshotRoute | null>('screenshot-route', null).then(
+      setRouteOverride
+    );
+  }, []);
+
+  if (routeOverride === 'pending') return null;
+
   return (
-    <NavigationContainer theme={navigationTheme} linking={linking}>
+    <NavigationContainer
+      theme={navigationTheme}
+      linking={linking}
+      initialState={buildInitialState(routeOverride)}>
       <Stack.Navigator
         screenOptions={{
           headerShown: false,
