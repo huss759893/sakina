@@ -14,7 +14,7 @@
     ],
     "ios": {
       "supportsTablet": false,
-      "bundleIdentifier": "com.sakina.app",
+      "bundleIdentifier": "com.creativeworld.sakina",
       "infoPlist": {
         "NSLocationWhenInUseUsageDescription": "Sakina uses your location to calculate accurate prayer times, the Qibla direction, and to find mosques near you.",
         "NSMotionUsageDescription": "Sakina uses the device compass to point you toward the Qibla.",
@@ -25,7 +25,7 @@
       }
     },
     "android": {
-      "package": "com.sakina.app",
+      "package": "com.creativeworld.sakina",
       "predictiveBackGestureEnabled": false,
       "adaptiveIcon": {
         "backgroundColor": "#060912",
