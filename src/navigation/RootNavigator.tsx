@@ -2,6 +2,7 @@ import React from 'react';
 import {
   NavigationContainer,
   DarkTheme,
+  type LinkingOptions,
   type Theme,
 } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -44,9 +45,32 @@ const navigationTheme: Theme = {
   },
 };
 
+const linking: LinkingOptions<RootStackParamList> = {
+  prefixes: ['sakina://'],
+  config: {
+    screens: {
+      Tabs: {
+        screens: {
+          Home: 'home',
+          Prayers: 'prayers',
+          Qibla: 'qibla',
+          Quran: 'quran',
+          More: 'more',
+        },
+      },
+      Surah: { path: 'surah/:number/:name', parse: { number: Number } },
+      Dhikr: 'dhikr',
+      Mosques: 'mosques',
+      Zakat: 'zakat',
+      Settings: 'settings',
+      LocationSearch: 'location',
+    },
+  },
+};
+
 export function RootNavigator() {
   return (
-    <NavigationContainer theme={navigationTheme}>
+    <NavigationContainer theme={navigationTheme} linking={linking}>
       <Stack.Navigator
         screenOptions={{
           headerShown: false,
