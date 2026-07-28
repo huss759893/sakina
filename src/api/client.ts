@@ -35,7 +35,7 @@ const sleep = (ms: number): Promise<void> =>
   new Promise((resolve) => setTimeout(resolve, ms));
 
 /** Identifies the app to community-run endpoints, as their policies ask. */
-export const USER_AGENT = 'Sakina/1.0 (open-source Islamic companion app)';
+export const USER_AGENT = 'Itminan/1.0 (open-source Islamic companion app)';
 
 async function fetchOnce(
   url: string,

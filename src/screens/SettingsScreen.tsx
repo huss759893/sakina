@@ -290,7 +290,7 @@ export function SettingsScreen() {
           <View style={styles.creditFooter}>
             <Globe2 size={14} color={palette.textFaint} strokeWidth={2} />
             <Text variant="caption" color={palette.textFaint} style={styles.flex}>
-              Sakina uses no paid APIs, no analytics and no accounts. Your
+              Itminan uses no paid APIs, no analytics and no accounts. Your
               coordinates are sent only to the services above to answer a query,
               and everything else stays on this device.
             </Text>
@@ -298,7 +298,7 @@ export function SettingsScreen() {
         </Card>
 
         <Text variant="caption" color={palette.textFaint} align="center" style={styles.version}>
-          Sakina · سكينة · version 1.0.0
+          Itminan · اطمئنان · version 1.0.0
         </Text>
       </ScrollView>
     </View>

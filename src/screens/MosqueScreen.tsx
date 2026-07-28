@@ -133,7 +133,7 @@ export function MosqueScreen() {
       <View style={[styles.root, { paddingTop: insets.top }]}>
         {header}
         <LocationPrompt
-          message="Sakina searches OpenStreetMap for mosques around you, so it needs your coordinates."
+          message="Itminan searches OpenStreetMap for mosques around you, so it needs your coordinates."
           onRequest={() => void requestLocation()}
           busy={locStatus === 'requesting'}
           error={locError}

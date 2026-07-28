@@ -39,7 +39,7 @@ export function MoreScreen() {
         <View style={styles.header}>
           <Text variant="h1">More</Text>
           <ArabicText variant="inline" color={palette.gold}>
-            سَكِينَة
+            اِطْمِئْنَان
           </ArabicText>
         </View>
 

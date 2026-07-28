@@ -1,5 +1,5 @@
 /**
- * Sakina palette — dark-first.
+ * Itminan palette — dark-first.
  *
  * A prayer app is opened at Fajr and at Isha, in the dark, often in bed or in a
  * quiet room. A light UI is the wrong instrument for that. Everything here is

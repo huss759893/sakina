@@ -1,4 +1,4 @@
-# Sakina · سكينة
+# Itminan · اطمئنان
 
 An Islamic lifestyle app built entirely on free, open, and public-domain sources.
 No API keys, no accounts, no analytics, no paid services.

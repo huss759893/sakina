@@ -117,7 +117,7 @@ export function HomeScreen() {
     return (
       <View style={styles.fill}>
         <LocationPrompt
-          message="Sakina needs your location to calculate prayer times for where you are. Nothing leaves your device except the coordinates sent to the free Aladhan API."
+          message="Itminan needs your location to calculate prayer times for where you are. Nothing leaves your device except the coordinates sent to the free Aladhan API."
           onRequest={() => void requestLocation()}
           busy={locStatus === 'requesting'}
           error={locError}

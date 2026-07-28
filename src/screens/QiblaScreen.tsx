@@ -112,7 +112,7 @@ export function QiblaScreen() {
     return (
       <Screen>
         <LocationPrompt
-          message="The Qibla is calculated from your coordinates to the Kaaba, so Sakina needs to know where you are."
+          message="The Qibla is calculated from your coordinates to the Kaaba, so Itminan needs to know where you are."
           onRequest={() => void requestLocation()}
           busy={status === 'requesting'}
           error={locError}

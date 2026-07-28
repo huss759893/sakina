@@ -47,7 +47,7 @@ const navigationTheme: Theme = {
 };
 
 const linking: LinkingOptions<RootStackParamList> = {
-  prefixes: ['sakina://'],
+  prefixes: ['itminan://'],
   config: {
     screens: {
       Tabs: {

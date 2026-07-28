@@ -1,4 +1,4 @@
-# Privacy Policy — Sakina
+# Privacy Policy — Itminan
 
 **Last updated: 27 July 2026**
 
@@ -12,13 +12,13 @@ Store Connect and the Play Console.
 
 ## The short version
 
-Sakina has no accounts, no analytics, no advertising, and no tracking. It
+Itminan has no accounts, no analytics, no advertising, and no tracking. It
 collects nothing about you. Your data stays on your device, except for the
 coordinates needed to answer a query.
 
 ## What the app accesses
 
-**Location.** With your permission, Sakina reads your device's location to
+**Location.** With your permission, Itminan reads your device's location to
 calculate prayer times, the Qibla direction, and to find nearby mosques. You
 can decline and instead choose a city by hand; the app remains fully usable.
 
@@ -38,7 +38,7 @@ is linked to an identity.
 | Surah number | `api.alquran.cloud`, `cdn.islamic.network` | Fetch Qur'an text and recitation |
 
 These are independent third-party services with their own privacy practices.
-Sakina sends them no identifier, no device ID, and no advertising ID.
+Itminan sends them no identifier, no device ID, and no advertising ID.
 
 ## What stays on your device
 
@@ -56,7 +56,7 @@ There is no push server and no message is sent over the network.
 
 ## Children
 
-Sakina collects no personal data from anyone, including children under 13.
+Itminan collects no personal data from anyone, including children under 13.
 
 ## Your rights
 

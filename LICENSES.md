@@ -1,6 +1,6 @@
 # Third-party content and licences
 
-An audit of everything in Sakina that someone else owns, and what each licence
+An audit of everything in Itminan that someone else owns, and what each licence
 requires of you before publishing.
 
 **Short answer: nothing in this repository is copyright-encumbered as it
@@ -134,7 +134,7 @@ Settings.
 
 ## Trademarks
 
-"Sakina" (سكينة, *tranquillity*) is a common Arabic noun, but ⚠️ **search your
-target markets' trademark registers before release** — app names are the most
-common cause of store rejection after privacy policies. The bundle identifier
-`com.sakina.app` in `app.json` must also be changed to a domain you control.
+"Itminan" (اطمئنان, *tranquility of the heart*, Qur'an 13:28) is a common
+Arabic noun, but ⚠️ **search your target markets' trademark registers before
+release** — app names are the most common cause of store rejection after
+privacy policies.

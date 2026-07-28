@@ -1,12 +1,12 @@
 {
   "expo": {
-    "name": "Sakina",
+    "name": "Itminan",
     "slug": "sakina",
     "owner": "creativeworld",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "scheme": "sakina",
+    "scheme": "itminan",
     "userInterfaceStyle": "dark",
     "backgroundColor": "#060912",
     "assetBundlePatterns": [
@@ -16,8 +16,8 @@
       "supportsTablet": false,
       "bundleIdentifier": "com.creativeworld.sakina",
       "infoPlist": {
-        "NSLocationWhenInUseUsageDescription": "Sakina uses your location to calculate accurate prayer times, the Qibla direction, and to find mosques near you.",
-        "NSMotionUsageDescription": "Sakina uses the device compass to point you toward the Qibla.",
+        "NSLocationWhenInUseUsageDescription": "Itminan uses your location to calculate accurate prayer times, the Qibla direction, and to find mosques near you.",
+        "NSMotionUsageDescription": "Itminan uses the device compass to point you toward the Qibla.",
         "UIBackgroundModes": [
           "audio"
         ],
@@ -55,7 +55,7 @@
       [
         "expo-location",
         {
-          "locationWhenInUsePermission": "Sakina uses your location to calculate accurate prayer times, the Qibla direction, and to find mosques near you."
+          "locationWhenInUsePermission": "Itminan uses your location to calculate accurate prayer times, the Qibla direction, and to find mosques near you."
         }
       ],
       [
